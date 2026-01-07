@@ -165,8 +165,8 @@ class AsanaDataGenerator:
         logger.info("Generating Projects")
         logger.info("=" * 60)
         
-        # Generate 10-15 projects (FASTEST - minimum realistic)
-        project_count = random.randint(10, 15)
+        # Generate projects based on config (optimized for fast evaluation)
+        project_count = random.randint(Config.NUM_PROJECTS_MIN, Config.NUM_PROJECTS_MAX)
         
         project_gen = ProjectGenerator(self.db, self.organization_id, self.date_range)
         self.project_info = project_gen.generate_projects(project_count, self.team_ids)

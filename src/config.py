@@ -27,12 +27,16 @@ class Config:
     # Database Configuration
     DATABASE_PATH = os.getenv('DATABASE_PATH', 'output/asana_simulation.sqlite')
     
-    # Generation Parameters (MINIMUM for FASTEST generation - still realistic)
+    # Generation Parameters (OPTIMIZED for FAST evaluation - still realistic)
     NUM_ORGANIZATIONS = int(os.getenv('NUM_ORGANIZATIONS', '1'))
-    NUM_TEAMS_MIN = int(os.getenv('NUM_TEAMS_MIN', '5'))
-    NUM_TEAMS_MAX = int(os.getenv('NUM_TEAMS_MAX', '8'))
-    NUM_USERS_MIN = int(os.getenv('NUM_USERS_MIN', '200'))
-    NUM_USERS_MAX = int(os.getenv('NUM_USERS_MAX', '500'))
+    NUM_TEAMS_MIN = int(os.getenv('NUM_TEAMS_MIN', '3'))
+    NUM_TEAMS_MAX = int(os.getenv('NUM_TEAMS_MAX', '5'))
+    NUM_USERS_MIN = int(os.getenv('NUM_USERS_MIN', '50'))
+    NUM_USERS_MAX = int(os.getenv('NUM_USERS_MAX', '100'))
+    NUM_PROJECTS_MIN = int(os.getenv('NUM_PROJECTS_MIN', '5'))
+    NUM_PROJECTS_MAX = int(os.getenv('NUM_PROJECTS_MAX', '10'))
+    TASKS_PER_PROJECT_MIN = int(os.getenv('TASKS_PER_PROJECT_MIN', '5'))
+    TASKS_PER_PROJECT_MAX = int(os.getenv('TASKS_PER_PROJECT_MAX', '10'))
     DATE_RANGE_MONTHS = int(os.getenv('DATE_RANGE_MONTHS', '6'))
     
     # Realistic Distribution Parameters

@@ -188,8 +188,8 @@ class TaskGenerator:
             List of task IDs
         """
         if num_tasks is None:
-            # Realistic task count per project: 5-10 tasks (FASTEST - minimum realistic)
-            num_tasks = random.randint(5, 10)
+            # Realistic task count per project: use config values
+            num_tasks = random.randint(Config.TASKS_PER_PROJECT_MIN, Config.TASKS_PER_PROJECT_MAX)
         
         logger.info(f"Generating {num_tasks} tasks for project {project_id}...")
         

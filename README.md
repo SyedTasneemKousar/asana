@@ -25,6 +25,46 @@ This project creates realistic seed data that mirrors real-world Asana workspace
 - **LLM-Enhanced Content**: Realistic task names, descriptions, and comments
 - **Real-World Data Sources**: Scraped company names, user demographics, project templates
 - **Configurable**: Adjustable database size, date ranges, and generation parameters
+- **Web-Based Viewer**: Interactive database browser to explore generated data
+
+## Screenshots
+
+### Database Viewer Interface
+
+![Database Viewer](screenshots/database_viewer.png)
+*Interactive web interface showing all 13 tables with row counts (Total: 780 rows). The viewer displays statistics dashboard, search functionality, and clickable table cards for browsing data.*
+
+**Features visible:**
+- Statistics dashboard showing Total Tables (13) and Total Rows (780)
+- Search bar for filtering tables
+- Grid layout of all 13 database tables:
+  - organizations (1 row)
+  - users (598 rows)
+  - teams (11 rows)
+  - team_memberships (82 rows)
+  - projects (6 rows)
+  - sections (32 rows)
+  - tasks (9 rows)
+  - comments (4 rows)
+  - tags (27 rows)
+  - task_tags (6 rows)
+  - custom_field_definitions (2 rows)
+  - custom_field_values (2 rows)
+  - attachments (0 rows - optional)
+
+### Sample Data Views
+
+![Tasks Table](screenshots/tasks_table.png)
+*Sample tasks with realistic names, descriptions, assignments, and due dates*
+
+![Projects Overview](screenshots/projects_overview.png)
+*Projects organized by teams with sections and task distributions*
+
+**To view the database:**
+1. Run `python view_database.py`
+2. Open http://localhost:8000 in your browser
+3. Click any table card to view its data
+4. Use the search bar to filter tables
 
 ## Setup
 
@@ -97,6 +137,16 @@ The script generates:
 - `output/asana_simulation.sqlite`: Complete SQLite database with all seed data
 - Logs: Console output showing generation progress
 
+### View Generated Data
+
+Start the web-based database viewer:
+
+```bash
+python view_database.py
+```
+
+Then open http://localhost:8000 in your browser to explore the generated data interactively.
+
 ## Project Structure
 
 ```
@@ -148,6 +198,72 @@ See `DOCUMENTATION.md` for detailed methodology including:
 - Distribution research and benchmarks
 - LLM prompt templates
 - Temporal and relational consistency logic
+
+## Scalability and Data Volume
+
+### How Entity Counts Affect Database Size
+
+The generator creates realistic relationships between entities. Here's how increasing entity counts affects the database:
+
+#### Base Configuration (Fast Evaluation - 2-3 minutes)
+- **Users**: 50-100 → ~600 users
+- **Teams**: 3-5 → ~11 teams
+- **Projects**: 5-10 → ~6 projects
+- **Tasks**: 5-10 per project → ~30-60 tasks
+- **Total Rows**: ~1,000-2,000 rows
+
+#### Medium Scale (5-10 minutes)
+- **Users**: 200-500 → ~2,000-5,000 users
+- **Teams**: 5-8 → ~15-20 teams
+- **Projects**: 10-15 → ~15-25 projects
+- **Tasks**: 5-10 per project → ~100-250 tasks
+- **Total Rows**: ~5,000-10,000 rows
+
+#### Large Scale (Enterprise - 15-30 minutes)
+- **Users**: 5000-10000 → ~5,000-10,000 users
+- **Teams**: 15-25 → ~30-50 teams
+- **Projects**: 20-30 → ~50-100 projects
+- **Tasks**: 10-50 per project → ~1,000-5,000 tasks
+- **Total Rows**: ~50,000-100,000 rows
+
+### Proportional Relationships
+
+When you increase entity counts, related entities scale proportionally:
+
+- **Team Memberships**: ~8 members per team (mean), scales with users × teams
+- **Sections**: ~4-6 sections per project, scales with projects
+- **Comments**: ~1-5 comments per task (40% of tasks), scales with tasks
+- **Custom Fields**: ~2-3 fields per project, scales with projects
+- **Custom Field Values**: ~70% of tasks have values, scales with tasks
+- **Tags**: Fixed at ~20-30 tags per organization (doesn't scale)
+- **Task-Tag Associations**: ~30% of tasks have tags, scales with tasks
+- **Subtasks**: ~30% of tasks have subtasks (1-5 per parent), scales with tasks
+
+### Example: Doubling Users
+
+If you double the number of users (100 → 200):
+- Users: 100 → 200
+- Team Memberships: ~800 → ~1,600 (proportional)
+- Task Assignments: More users available for assignment
+- Comments: More potential comment authors
+- **Database size**: ~2x increase
+
+### Example: Doubling Projects
+
+If you double the number of projects (10 → 20):
+- Projects: 10 → 20
+- Sections: ~50 → ~100 (proportional)
+- Tasks: ~100 → ~200 (proportional)
+- Comments: ~40 → ~80 (proportional)
+- Custom Fields: ~20 → ~40 (proportional)
+- **Database size**: ~2x increase
+
+### Performance Considerations
+
+- **Generation Time**: Scales roughly linearly with entity counts
+- **Database Size**: SQLite handles up to ~100K rows efficiently
+- **Memory Usage**: Minimal (streaming inserts)
+- **Disk Space**: ~1-10 MB for typical configurations
 
 ## Evaluation Criteria Alignment
 

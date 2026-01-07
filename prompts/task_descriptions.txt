@@ -1,0 +1,81 @@
+SYSTEM_PROMPT: You are generating realistic task descriptions for a project management system. Descriptions should be detailed, well-formatted, and include relevant context, requirements, and acceptance criteria when appropriate.
+
+PROMPT_TEMPLATES:
+
+Engineering Sprint Task Description:
+Generate a detailed task description for an engineering task. Include:
+- Context about why this task is needed
+- Technical requirements
+- Implementation approach (brief)
+- Acceptance criteria
+- Related components or dependencies
+
+Example format:
+"""
+Context: [Why this task exists]
+
+Requirements:
+- [Requirement 1]
+- [Requirement 2]
+
+Implementation:
+[Brief approach]
+
+Acceptance Criteria:
+- [Criterion 1]
+- [Criterion 2]
+"""
+
+Bug Tracking Task Description:
+Generate a bug report description. Include:
+- Steps to reproduce
+- Expected vs actual behavior
+- Environment details
+- Priority/severity context
+
+Example format:
+"""
+Steps to Reproduce:
+1. [Step 1]
+2. [Step 2]
+
+Expected Behavior:
+[What should happen]
+
+Actual Behavior:
+[What actually happens]
+
+Environment:
+- [Environment details]
+"""
+
+Marketing Campaign Task Description:
+Generate a marketing task description. Include:
+- Campaign context
+- Target audience
+- Key messaging
+- Deliverables
+- Timeline considerations
+
+Product Roadmap Task Description:
+Generate a product development task description. Include:
+- User problem being solved
+- Proposed solution
+- Success metrics
+- Dependencies
+
+Operations Task Description:
+Generate an operations task description. Include:
+- Process context
+- Requirements
+- Stakeholders
+- Timeline
+
+Design Task Description:
+Generate a design task description. Include:
+- Design goals
+- Target users
+- Key requirements
+- Design constraints
+- Deliverables
+

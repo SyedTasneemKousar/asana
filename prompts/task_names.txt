@@ -1,0 +1,61 @@
+SYSTEM_PROMPT: You are generating realistic task names for a project management system. Task names should be concise, action-oriented, and specific to the project context.
+
+PROMPT_TEMPLATES:
+
+Engineering Sprint Tasks:
+- "Implement {component} authentication flow"
+- "Refactor {module} for better performance"
+- "Add {feature} to {component}"
+- "Fix bug in {component} causing {issue}"
+- "Optimize {component} database queries"
+- "Create API endpoint for {functionality}"
+- "Update {component} dependencies"
+- "Write tests for {component}"
+- "Review and merge PR for {feature}"
+- "Deploy {component} to {environment}"
+
+Bug Tracking Tasks:
+- "Fix {component} crash on {scenario}"
+- "Resolve {issue} in {component}"
+- "Patch security vulnerability in {component}"
+- "Fix data corruption in {component}"
+- "Resolve performance issue with {component}"
+- "Fix UI bug: {description}"
+- "Resolve API timeout for {endpoint}"
+- "Fix authentication failure for {scenario}"
+
+Marketing Campaign Tasks:
+- "Create {content_type} for {campaign}"
+- "Design {asset} for {channel}"
+- "Write blog post: {topic}"
+- "Schedule social media posts for {campaign}"
+- "Create email campaign: {topic}"
+- "Design landing page for {campaign}"
+- "Prepare presentation for {event}"
+- "Analyze metrics for {campaign}"
+
+Product Roadmap Tasks:
+- "Research {feature} requirements"
+- "Design {feature} user flow"
+- "Create mockups for {feature}"
+- "Gather feedback on {feature}"
+- "Plan {feature} implementation"
+- "Document {feature} specifications"
+- "Validate {feature} with users"
+
+Operations Tasks:
+- "Update {process} documentation"
+- "Review and update {policy}"
+- "Schedule {meeting_type} meeting"
+- "Process {request_type} request"
+- "Audit {system/process}"
+- "Implement {process} improvements"
+
+Design Tasks:
+- "Create {design_type} for {component}"
+- "Design {element} for {feature}"
+- "Create design system {component}"
+- "Update {component} visual design"
+- "Create {asset_type} assets"
+- "Review and refine {design_element}"
+

@@ -1,0 +1,41 @@
+SYSTEM_PROMPT: You are generating realistic comments/stories for tasks in a project management system. Comments should be conversational, contextual, and reflect real team collaboration patterns.
+
+COMMENT_TYPES:
+
+Status Updates:
+- "Starting work on this now"
+- "Blocked on [dependency], waiting for [person/team]"
+- "Making good progress, should be done by [timeframe]"
+- "This is complete and ready for review"
+- "Pushed to staging, ready for QA"
+
+Questions/Clarifications:
+- "Can someone clarify [requirement]?"
+- "Do we have [resource/information] for this?"
+- "Should this also include [consideration]?"
+- "What's the priority on this?"
+
+Feedback/Reviews:
+- "Looks good! One small suggestion: [feedback]"
+- "This approach makes sense. Consider [alternative]"
+- "Approved, ready to merge"
+- "Needs some changes: [specific feedback]"
+
+Collaboration:
+- "@[person] can you take a look at this?"
+- "Thanks for the update!"
+- "I'll handle [part], you can focus on [other part]"
+- "Let's sync on this in our standup"
+
+Technical Details:
+- "Using [approach/technology] for this"
+- "Found an issue: [description]. Fixed by [solution]"
+- "Performance looks good: [metrics]"
+- "Tested and working as expected"
+
+Context/Updates:
+- "Updated based on feedback from [source]"
+- "This relates to [other task/project]"
+- "Changed approach because [reason]"
+- "Added [detail] to address [requirement]"
+

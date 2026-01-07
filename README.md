@@ -31,10 +31,13 @@ This project creates realistic seed data that mirrors real-world Asana workspace
 
 ### Database Viewer Interface
 
-![Database Viewer](screenshots/database_viewer.png)
-*Interactive web interface showing all 13 tables with row counts (Total: 780 rows). The viewer displays statistics dashboard, search functionality, and clickable table cards for browsing data.*
+The database viewer provides an interactive web interface to explore all generated data. To capture screenshots:
 
-**Features visible:**
+1. Run the database viewer: `python view_database.py`
+2. Open http://localhost:8000 in your browser
+3. Take screenshots of the interface
+
+**Database Viewer Features:**
 - Statistics dashboard showing Total Tables (13) and Total Rows (780)
 - Search bar for filtering tables
 - Grid layout of all 13 database tables:
@@ -52,19 +55,12 @@ This project creates realistic seed data that mirrors real-world Asana workspace
   - custom_field_values (2 rows)
   - attachments (0 rows - optional)
 
-### Sample Data Views
+**Screenshot Files:**
+- `screenshots/database_viewer.png` - Main database viewer interface
+- `screenshots/tasks_table.png` - Sample tasks table view (optional)
+- `screenshots/projects_overview.png` - Projects overview (optional)
 
-![Tasks Table](screenshots/tasks_table.png)
-*Sample tasks with realistic names, descriptions, assignments, and due dates*
-
-![Projects Overview](screenshots/projects_overview.png)
-*Projects organized by teams with sections and task distributions*
-
-**To view the database:**
-1. Run `python view_database.py`
-2. Open http://localhost:8000 in your browser
-3. Click any table card to view its data
-4. Use the search bar to filter tables
+*Note: Screenshot files can be added to the `screenshots/` directory. The viewer is always accessible by running `python view_database.py`.*
 
 ## Setup
 

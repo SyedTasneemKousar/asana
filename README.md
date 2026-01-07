@@ -27,41 +27,6 @@ This project creates realistic seed data that mirrors real-world Asana workspace
 - **Configurable**: Adjustable database size, date ranges, and generation parameters
 - **Web-Based Viewer**: Interactive database browser to explore generated data
 
-## Screenshots
-
-### Database Viewer Interface
-
-The database viewer provides an interactive web interface to explore all generated data. To capture screenshots:
-
-1. Run the database viewer: `python view_database.py`
-2. Open http://localhost:8000 in your browser
-3. Take screenshots of the interface
-
-**Database Viewer Features:**
-- Statistics dashboard showing Total Tables (13) and Total Rows (780)
-- Search bar for filtering tables
-- Grid layout of all 13 database tables:
-  - organizations (1 row)
-  - users (598 rows)
-  - teams (11 rows)
-  - team_memberships (82 rows)
-  - projects (6 rows)
-  - sections (32 rows)
-  - tasks (9 rows)
-  - comments (4 rows)
-  - tags (27 rows)
-  - task_tags (6 rows)
-  - custom_field_definitions (2 rows)
-  - custom_field_values (2 rows)
-  - attachments (0 rows - optional)
-
-**Screenshot Files:**
-- `screenshots/database_viewer.png` - Main database viewer interface
-- `screenshots/tasks_table.png` - Sample tasks table view (optional)
-- `screenshots/projects_overview.png` - Projects overview (optional)
-
-*Note: Screenshot files can be added to the `screenshots/` directory. The viewer is always accessible by running `python view_database.py`.*
-
 ## Setup
 
 ### Prerequisites
